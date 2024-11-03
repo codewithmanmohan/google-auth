@@ -3,12 +3,13 @@ import { createRoot } from "react-dom/client";
 
 import App from "./App.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { OAUTH_CLIENT_ID, OAUTH_DOMAIN } from "../common/environment.js";
 createRoot(document.getElementById("root")).render(
   <Auth0Provider
-    domain="codewithmannu.us.auth0.com"
-    clientId="ocNHDiUGexCQDemkKdSeHtKw2SHj8KaK"
+    domain={OAUTH_DOMAIN}
+    clientId={OAUTH_CLIENT_ID}
     authorizationParams={{
-      redirect_uri: window.location.origin,
+      redirect_uri: BASE_REDIRECT_URL,
     }}
   >
     <StrictMode>
